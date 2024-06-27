@@ -19,7 +19,7 @@ const cartSlice = createSlice({
                 state.cartItems.push(action.payload);
             }
         },
-        toggleCartOpen(state, action) { // Ispravljeno ime akcije
+        toggleCartOpen(state, action) { 
             state.isOpen = action.payload;
         },
         increment(state, action) {
@@ -51,6 +51,6 @@ const cartSlice = createSlice({
     }
 });
 
-export const { addItem, toggleCartOpen, increment, decrement, deleteItem, deleteAll } = cartSlice.actions; // Ispravljeno ime akcije
+export const { addItem, toggleCartOpen, increment, decrement, deleteItem, deleteAll } = cartSlice.actions; 
 
 export default cartSlice.reducer;

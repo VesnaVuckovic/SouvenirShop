@@ -7,13 +7,11 @@ import Cart from './components/Cart';
 
 const App = () => {
   return (
-    <>
-      <Provider store={store}>
-        <Header></Header>
-        <Home></Home>
-        <Cart></Cart>
-      </Provider>
-    </>
+    <Provider store={store}>
+      <Header />
+      <Home />
+      <Cart />
+    </Provider>
   );
 }
 

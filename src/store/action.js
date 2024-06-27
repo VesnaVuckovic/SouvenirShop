@@ -17,6 +17,6 @@ export const duplicate=()=>{
 }
 
 export const setFilter = (filterType, filterValue) => ({
-  type: 'SET_FILTER',
-  payload: { filterType, filterValue }
-});
+    type: 'SET_FILTER',
+    payload: { filterType, filterValue }
+  });

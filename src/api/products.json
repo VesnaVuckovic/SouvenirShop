@@ -1,0 +1,149 @@
+{
+    "Products": [
+      {
+        "id": 1,
+        "type": 1,
+        "color": 1,
+        "availableSizes": {
+          "1": false,
+          "2": true,
+          "3": true,
+          "4": true
+        },
+        "price": {
+          "regularPrice": 30,
+          "promoDiscount": 15
+        },
+        "image": {
+          "src": "/images/T-shrt-W-1.jpg",
+          "alt": "T-shrtWhite"
+        }
+      },
+      {
+        "id": 2,
+        "type": 1,
+        "color": 2,
+        "availableSizes": {
+          "1": true,
+          "2": false,
+          "3": true,
+          "4": false
+        },
+        "price": {
+          "regularPrice": 30,
+          "promoDiscount": 0
+        },
+        "image": {
+          "src": "/images/T-shrt-B-2.jpg",
+          "alt": "T-shrtBlack"
+        }
+      },
+      {
+        "id": 3,
+        "type": 2,
+        "color": 1,
+        "size": [5],
+        "price": {
+          "regularPrice": 25,
+          "promoDiscount": 0
+        },
+        "inStock": true,
+        "image": {
+          "src": "/images/Cap-W-3.jpg",
+          "alt": "CapWhite"
+        }
+      },
+      {
+        "id": 4,
+        "type": 2,
+        "color": 2,
+        "size": [5],
+        "price": {
+          "regularPrice": 25,
+          "promoDiscount": 0
+        },
+        "inStock": true,
+        "image": {
+          "src": "/images/Cap-B-4.jpg",
+          "alt": "CapBlack"
+        }
+      },
+      {
+        "id": 5,
+        "type": 3,
+        "color": 1,
+        "size": [5],
+        "price": {
+          "regularPrice": 15,
+          "promoDiscount": 10
+        },
+        "inStock": true,
+        "image": {
+          "src": "/images/Cup-W-5.jpg",
+          "alt": "CupWhite"
+        }
+      },
+      {
+        "id": 6,
+        "type": 3,
+        "color": 2,
+        "size": [5],
+        "price": {
+          "regularPrice": 15,
+          "promoDiscount": 0
+        },
+        "inStock": true,
+        "image": {
+          "src": "/images/Cup-B-6.jpg",
+          "alt": "CupBlack"
+        }
+      }
+    ],
+    "color": [
+      {
+        "id": 1,
+        "name": "White"
+      },
+      {
+        "id": 2,
+        "name": "Black"
+      }
+    ],
+    "type": [
+      {
+        "id": 1,
+        "name": "T-shirt"
+      },
+      {
+        "id": 2,
+        "name": "Cap"
+      },
+      {
+        "id": 3,
+        "name": "Cup"
+      }
+    ],
+    "size": [
+      {
+        "id": 1,
+        "name": "S"
+      },
+      {
+        "id": 2,
+        "name": "M"
+      },
+      {
+        "id": 3,
+        "name": "L"
+      },
+      {
+        "id": 4,
+        "name": "XL"
+      },
+      {
+        "id": 5,
+        "name": "OneSize"
+      }
+    ]
+  }
+  

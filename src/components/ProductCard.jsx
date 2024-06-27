@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import { addItem } from "..//reducer/cartSlice";
+import { addItem } from "../reducer/cartSlice";
+import { calculatePromoPrice } from "../store/utils/calculatePrice";
 
 const ProductCard = (props) => {
     const {cartItems} = useSelector(state => state.cart);
@@ -7,25 +8,14 @@ const ProductCard = (props) => {
     const { id, image, regularPrice, promoDiscount, inStock, typeName, colorName } = props;
     
     const handleAddCart = () => {
-        const item = { ...props };
+        const item = { ...props, quantity: 1 };
         dispatch(addItem(item));
     }
-
-    console.log(regularPrice, promoDiscount);
-
-    const calculatePromoPrice = () => {              
-        
-        if (promoDiscount > 0) {
-            return (regularPrice - ((regularPrice/100) * promoDiscount));
-        } else {            
-            return regularPrice;
-        }
-    };
-     
+    const promoPrice = calculatePromoPrice(regularPrice, promoDiscount);              
     return (
         <div className="product_card">
             <figure>
-                <img src={image.src} alt={image.alt} onError={(e) => console.log('Error loading image:', e)} /> 
+                <img src={image.src} alt={image.alt} onError={(e) => console.log('Error loading image:', e)} />  
             </figure>
 
             <div className="inline-container">
@@ -35,14 +25,17 @@ const ProductCard = (props) => {
                 </div>
 
                 <div className="price"> 
-                    Price: {regularPrice} EUR
-                    {promoDiscount > 0 ? (                    
+                    {promoDiscount === 0 ? (
                         <>
-                            <del>Price: {regularPrice} EUR</del>
+                        Price: {regularPrice} EUR</>
+                        ) : (
+                        <>
+                        {promoDiscount > 0 && promoPrice !== regularPrice && (
+                        <del>Price: {regularPrice} EUR</del>
+                        )}<br />
+                        Promo: {promoPrice} EUR
                         </>
-                    ) : (
-                        `Promo Price: ${calculatePromoPrice()} EUR`
-                    )}                                      
+                    )}
                 </div>
             </div>            
 
@@ -54,5 +47,6 @@ const ProductCard = (props) => {
         </div>        
     );
 };
+
 
 export default ProductCard;
